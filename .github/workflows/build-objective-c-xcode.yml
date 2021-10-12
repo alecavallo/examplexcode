@@ -34,8 +34,8 @@ jobs:
         env:
           scheme: ${{ 'default' }}
         run: |
-           mkdir -p ./build/
-           mkdir -p ./build/ipa
+          mkdir -p ./build/
+          mkdir -p ./build/ipa
           if [ $scheme = default ]; then scheme=$(cat default); fi
           xcodebuild -project ExampleXcode.xcodeproj -scheme YourScheme -archivePath ./build/ExampleXcode.xcarchive archive
           xcodebuild -exportArchive -archivePath ./build/ExampleXcode.xcarchive -exportPath ./build/ipa -exportOptionsPlist ./ExampleXcode/ExampleXcode-Info.plist
