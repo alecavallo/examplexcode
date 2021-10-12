@@ -37,7 +37,7 @@ jobs:
           mkdir -p ./build/
           mkdir -p ./build/ipa
           if [ $scheme = default ]; then scheme=$(cat default); fi
-          xcodebuild -project ExampleXcode.xcodeproj -scheme YourScheme -archivePath ./build/ExampleXcode.xcarchive archive
+          xcodebuild -project ExampleXcode.xcodeproj -scheme $scheme -archivePath ./build/ExampleXcode.xcarchive archive
           xcodebuild -exportArchive -archivePath ./build/ExampleXcode.xcarchive -exportPath ./build/ipa -exportOptionsPlist ./ExampleXcode/ExampleXcode-Info.plist
 
       - name: List files
